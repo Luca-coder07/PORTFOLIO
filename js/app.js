@@ -23,21 +23,3 @@ document.querySelectorAll('.animated-text').forEach(link =>
 			link.appendChild(span);
 		});
 	});
-document.addEventListener("DOMContentLoaded", function() {
-    const text = "Bienvenue sur mon portfolio ! Je suis un développeur de jeu vidéo passionné.";
-    const typingTextElement = document.getElementById("typing-text");
-
-    let i = 0;
-    function typeWriter() {
-        if (i < text.length) {
-            typingTextElement.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100); // 100ms entre chaque caractère
-        }
-    }
-
-    // Initialisation de l'animation
-    typingTextElement.innerHTML = ""; // Efface le contenu initial
-    typingTextElement.classList.add("typing"); // Ajoute la classe CSS
-    typeWriter(); // Lance l'animation
-});
