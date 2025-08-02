@@ -23,3 +23,24 @@ document.querySelectorAll('.animated-text').forEach(link =>
 			link.appendChild(span);
 		});
 	});
+
+const carousel = document.querySelector('.projects');
+let userScrolled = false;
+let timer;
+
+carousel.addEventListener('scroll', () => 
+{
+	userScrolled = true;
+	clearTimeout(timer);
+	timer = setTimeout(() => 
+	{
+		userScrolled = false;
+	}, 5000);
+});
+
+setInterval(() => {
+	if (!userScrolled) {
+		carousel.scrollBy({ left: 260, behavior: 'smooth'});
+	}
+}, 5000);
+
