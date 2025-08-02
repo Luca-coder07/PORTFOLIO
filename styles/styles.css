@@ -45,21 +45,58 @@ section {
 	text-align: center;
 }
 
+#project-title {
+	text-align: center;
+}
+
+#project-section {
+	width: 600px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+	padding: 40px 0;
+	margin: 0 auto;
+	gap: 20px;
+}
+
 .projects {
 	display: flex;
 	overflow-x: auto;
-	gap: 16px;
-	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	gap: 20px;
+	align-items: center;
 }
 
 .card {
-	max-width: 250px;
-	min-height: 350px;
-	background: #2a2a2a;
-	padding: 20px;
-	border-radius: 16px;
+	width: 300px;
+	height: 250px;
+	background: #eee;
+	border: 3px solid black;
+	padding: 15px;
+	text-align: center;
+	border-radius: 10px;
+	transition: all 0.4s ease;
+	filter: blur(2px);
+	opacity: 0.5;
+	transform: scale(0.9);
 	flex-shrink: 0;
-	scroll-snap-align: start;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-	border: 1px solid black;
+}
+
+.card.active {
+	min-width: 320px;
+	height: 300px;
+	filter: none;
+	opacity: 1;
+	transform: scale(1.0);
+	z-index: 1;
+}
+
+.arrow {
+	font-size: 24px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
 }

@@ -25,22 +25,25 @@ document.querySelectorAll('.animated-text').forEach(link =>
 	});
 
 const carousel = document.querySelector('.projects');
-let userScrolled = false;
-let timer;
+const cards = document.querySelectorAll('.card');
+let current = 1;
 
-carousel.addEventListener('scroll', () => 
-{
-	userScrolled = true;
-	clearTimeout(timer);
-	timer = setTimeout(() => 
-	{
-		userScrolled = false;
-	}, 5000);
-});
+function updateActiveCard() {
+	cards.forEach((card, i) => {
+		card.classList.toggle('active', i === current);
+	});
+}
 
-setInterval(() => {
-	if (!userScrolled) {
-		carousel.scrollBy({ left: 260, behavior: 'smooth'});
-	}
-}, 5000);
+document.querySelector('.arrow.left').onclick = () => {
+	carousel.scrollBy({ left: -350, behavior: 'smooth'});
+	if (current > 0) current--;
+	updateActiveCard();	
+};
 
+document.querySelector('.arrow.right').onclick = () => {
+	carousel.scrollBy({ left: 350, behavior: 'smooth'});
+	if (current < cards.length - 1) current++;
+	updateActiveCard();
+};
+
+updateActiveCard();
