@@ -26,30 +26,12 @@ document.querySelectorAll('.animated-text').forEach(link =>
 
 const carousel = document.querySelector('.projects');
 const cards = document.querySelectorAll('.card');
-let current = 1;
+let current = 0;
 
 function updateActiveCard() {
 	cards.forEach((card, i) => {
 		card.classList.toggle('active', i === current);
 	});
-}
-
-function detectVisibleCard() {
-    let maxVisibleWidth = 0;
-    let visibleIndex = 0;
-
-    cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const visibleWidth = Math.min(rect.right, window.innerWidth) - Math.max(rect.left, 0);
-
-        if (visibleWidth > maxVisibleWidth) {
-            maxVisibleWidth = visibleWidth;
-            visibleIndex = index;
-        }
-    });
-
-    current = visibleIndex;
-    updateActiveCard();
 }
 
 document.querySelector('.arrow.left').onclick = () => {
@@ -75,7 +57,3 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") document.querySelector(".arrow.left").click();
 });
 
-window.addEventListener("load", detectVisibleCard);
-carousel.addEventListener("scroll", () => {
-    detectVisibleCard();
-});
