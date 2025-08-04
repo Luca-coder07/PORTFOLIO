@@ -52,9 +52,10 @@ section {
 }
 
 .article {
-	border-right-width: 4px;
-	border-right-color: #444;
-	border-right-style: solid;
+	background-color: rgb(219, 218, 215);
+	border-left-width: 4px;
+	border-left-color: #444;
+	border-left-style: solid;
 	text-align: justify;
     line-height: 1.6;    
     text-justify: inter-word;
