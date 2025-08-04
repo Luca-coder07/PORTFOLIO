@@ -132,14 +132,13 @@ section {
 }
 
 .arrow img {
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
 	object-fit: contain;
-    filter: brightness(0) invert(1); /* optionnel pour les rendre blanches sur fond sombre */
     transition: transform 0.2s ease;
 }
 
 .arrow:hover img {
-    transform: scale(1.1);
+    transform: scale(1.5);
     filter: brightness(1) invert(0); /* change la couleur au survol */
 }
