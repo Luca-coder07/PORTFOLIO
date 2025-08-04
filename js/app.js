@@ -38,16 +38,24 @@ document.querySelector('.arrow.left').onclick = () => {
 	if (current > 0) {
 		carousel.scrollBy({ left: -350, behavior: 'smooth'});
 		current--;
-		updateActiveCard();	
 	}
+	if (current = 0) {
+		carousel.scrollBy({ left: 350*(cards.length - 1), behavior: 'smooth'});
+		current = cards.length - 1;
+	}
+	updateActiveCard();	
 };
 
 document.querySelector('.arrow.right').onclick = () => {
 	if (current < cards.length - 1) {
 		carousel.scrollBy({ left: 350, behavior: 'smooth'});
 		current++;
-		updateActiveCard();
 	}
+	if (current == cards.length - 1) {
+		carousel.scrollBy({left: -350*(cards.length-1), behavior: 'smooth'});
+		current = 0;
+	}
+	updateActiveCard();
 };
 
 updateActiveCard();
