@@ -32,6 +32,7 @@ function updateActiveCard() {
 	cards.forEach((card, i) => {
 		card.classList.toggle('active', i === current);
 	});
+	console.log(current);
 }
 
 document.querySelector('.arrow.left').onclick = () => {
@@ -39,8 +40,8 @@ document.querySelector('.arrow.left').onclick = () => {
 		carousel.scrollBy({ left: -350, behavior: 'smooth'});
 		current--;
 	}
-	if (current = 0) {
-		carousel.scrollBy({ left: 350*(cards.length - 1), behavior: 'smooth'});
+	else {
+		carousel.scrollBy({ left: 350 * (cards.length - 1), behavior: 'smooth'});
 		current = cards.length - 1;
 	}
 	updateActiveCard();	
@@ -51,8 +52,8 @@ document.querySelector('.arrow.right').onclick = () => {
 		carousel.scrollBy({ left: 350, behavior: 'smooth'});
 		current++;
 	}
-	if (current == cards.length - 1) {
-		carousel.scrollBy({left: -350*(cards.length-1), behavior: 'smooth'});
+	else {
+		carousel.scrollBy({left: -350 * (cards.length - 1), behavior: 'smooth'});
 		current = 0;
 	}
 	updateActiveCard();
