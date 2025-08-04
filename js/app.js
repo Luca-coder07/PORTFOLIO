@@ -68,6 +68,8 @@ document.querySelector('.arrow.right').onclick = () => {
 	}
 };
 
+updateActiveCard();
+
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") document.querySelector(".arrow.right").click();
     if (e.key === "ArrowLeft") document.querySelector(".arrow.left").click();
