@@ -74,6 +74,12 @@ section {
 	scroll-behavior: smooth;
 	gap: 20px;
 	align-items: center;
+    scrollbar-width: none; /* Pour Firefox */
+    -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+}
+
+.projects::-webkit-scrollbar {
+    display: none; /* Pour Chrome, Safari et Opera */
 }
 
 .card {
