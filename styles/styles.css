@@ -53,12 +53,10 @@ section {
 
 .article {
 	background-color: rgb(219, 218, 215);
-	border-left-width: 4px;
-	border-left-color: #444;
-	border-left-style: solid;
-	text-align: justify;
+	border-width: 4px;
+	border-color: #444;
+	border-style: solid;
     line-height: 1.6;    
-    text-justify: inter-word;
     max-width: 700px; 
 	padding: 20px 10px 20px auto;  
     margin: 0 auto;          
