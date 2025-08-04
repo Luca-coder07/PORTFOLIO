@@ -57,3 +57,29 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") document.querySelector(".arrow.left").click();
 });
 
+function detectVisibleCard() {
+    let maxVisibleWidth = 0;
+    let visibleIndex = 0;
+
+    cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const visibleWidth = Math.min(rect.right, window.innerWidth) - Math.max(rect.left, 0);
+
+        if (visibleWidth > maxVisibleWidth) {
+            maxVisibleWidth = visibleWidth;
+            visibleIndex = index;
+        }
+    });
+
+    current = visibleIndex;
+    updateActiveCard();
+}
+
+// Détection initiale
+detectVisibleCard();
+
+// Détection si on scroll manuellement dans le carrousel
+carousel.addEventListener("scroll", () => {
+    detectVisibleCard();
+});
+
