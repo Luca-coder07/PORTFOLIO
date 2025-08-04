@@ -132,8 +132,9 @@ section {
 }
 
 .arrow img {
-    width: 100%;
-    height: auto;
+    width: 24px;
+    height: 24px;
+	object-fit: contain;
     filter: brightness(0) invert(1); /* optionnel pour les rendre blanches sur fond sombre */
     transition: transform 0.2s ease;
 }
