@@ -34,29 +34,6 @@ function updateActiveCard() {
 	});
 }
 
-document.querySelector('.arrow.left').onclick = () => {
-	if (current > 0) {
-		carousel.scrollBy({ left: -350, behavior: 'smooth'});
-		current--;
-		updateActiveCard();	
-	}
-};
-
-document.querySelector('.arrow.right').onclick = () => {
-	if (current < cards.length - 1) {
-		carousel.scrollBy({ left: 350, behavior: 'smooth'});
-		current++;
-		updateActiveCard();
-	}
-};
-
-updateActiveCard();
-
-document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") document.querySelector(".arrow.right").click();
-    if (e.key === "ArrowLeft") document.querySelector(".arrow.left").click();
-});
-
 function detectVisibleCard() {
     let maxVisibleWidth = 0;
     let visibleIndex = 0;
@@ -75,11 +52,28 @@ function detectVisibleCard() {
     updateActiveCard();
 }
 
-// Détection initiale
-detectVisibleCard();
+document.querySelector('.arrow.left').onclick = () => {
+	if (current > 0) {
+		carousel.scrollBy({ left: -350, behavior: 'smooth'});
+		current--;
+		updateActiveCard();	
+	}
+};
 
-// Détection si on scroll manuellement dans le carrousel
+document.querySelector('.arrow.right').onclick = () => {
+	if (current < cards.length - 1) {
+		carousel.scrollBy({ left: 350, behavior: 'smooth'});
+		current++;
+		updateActiveCard();
+	}
+};
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") document.querySelector(".arrow.right").click();
+    if (e.key === "ArrowLeft") document.querySelector(".arrow.left").click();
+});
+
+window.addEventListener("load", detectVisibleCard);
 carousel.addEventListener("scroll", () => {
     detectVisibleCard();
 });
-
