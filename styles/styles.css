@@ -52,12 +52,15 @@ section {
 }
 
 .article {
+	border-right-width: 4px;
+	border-right-color: #444;
+	border-right-style: solid;
 	text-align: justify;
     line-height: 1.6;    
     text-justify: inter-word;
     max-width: 700px;   
     margin: 0 auto;          
-    font-size: 12px;
+    font-size: 16px;
 }
 
 #project-title {
