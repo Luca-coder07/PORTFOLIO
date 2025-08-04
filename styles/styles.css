@@ -120,9 +120,25 @@ section {
 }
 
 .arrow {
-	font-size: 24px;
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1); /* optionnel pour les rendre blanches sur fond sombre */
+    transition: transform 0.2s ease;
+}
+
+.arrow:hover img {
+    transform: scale(1.1);
+    filter: brightness(1) invert(0); /* change la couleur au survol */
 }
