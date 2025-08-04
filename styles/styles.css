@@ -59,9 +59,10 @@ section {
 	text-align: justify;
     line-height: 1.6;    
     text-justify: inter-word;
-    max-width: 600px;   
-    margin: 5 auto;          
-    font-size: 16px;
+    max-width: 700px; 
+	padding: 5px auto;  
+    margin: 0 auto;          
+    font-size: 14px;
 }
 
 #project-title {
