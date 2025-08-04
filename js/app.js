@@ -19,7 +19,7 @@ document.querySelectorAll('.animated-text').forEach(link =>
 			let span = document.createElement('span'); // Création d'un element <span> pour chaque lettre 
 			span.textContent = letter;
 
-			span.style.transitionDelay = '${index * 50}ms'; // Décalage progressif
+			span.style.transitionDelay = `${index * 50}ms`; // Décalage progressif
 			link.appendChild(span);
 		});
 	});
@@ -35,15 +35,25 @@ function updateActiveCard() {
 }
 
 document.querySelector('.arrow.left').onclick = () => {
-	carousel.scrollBy({ left: -350, behavior: 'smooth'});
-	if (current > 0) current--;
-	updateActiveCard();	
+	if (current > 0) {
+		carousel.scrollBy({ left: -350, behavior: 'smooth'});
+		current--;
+		updateActiveCard();	
+	}
 };
 
 document.querySelector('.arrow.right').onclick = () => {
-	carousel.scrollBy({ left: 350, behavior: 'smooth'});
-	if (current < cards.length - 1) current++;
-	updateActiveCard();
+	if (current < cards.length - 1) {
+		carousel.scrollBy({ left: 350, behavior: 'smooth'});
+		current++;
+		updateActiveCard();
+	}
 };
 
 updateActiveCard();
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") document.querySelector(".arrow.right").click();
+    if (e.key === "ArrowLeft") document.querySelector(".arrow.left").click();
+});
+

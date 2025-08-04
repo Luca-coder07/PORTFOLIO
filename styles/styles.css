@@ -31,13 +31,19 @@ nav ul li a {
 	text-decoration: none;
 }
 
+nav ul li a:focus {
+	outline: 2px solid gold;
+	background: #444;
+}
+
 .animated-text span {
 	display: inline-block;
-	transition: transform 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out, color 0.3s;
 }
 
 .animated-text:hover span {
-	transform: translateY(-10px); /*Deplace chaque lettre vers le haut*/
+	transform: translateY(-5px);
+	color: gold;
 }
 
 section {
@@ -50,7 +56,8 @@ section {
 }
 
 #project-section {
-	width: 600px;
+	width: 90%;
+	max-width: 600px;
 	justify-content: center;
 	display: flex;
 	align-items: center;
